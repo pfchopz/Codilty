@@ -15,9 +15,7 @@ def solution(N):
         else:
             if b < a:
                 b = a
-                a = 0
-            else:
-                a = 0
+            a = 0
 
     return b
 
