@@ -12,3 +12,5 @@ def solution(A, K):
     return A
 
 print(solution(TestArray, 7))
+
+
