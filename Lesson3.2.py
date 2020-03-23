@@ -1,10 +1,15 @@
 # you can write to stdout for debugging purposes, e.g.
 # print("this is a debug message")
-import math
 
-def solution(X, Y, D):
+array = [2, 3, 1, 4, 6, 7]
+
+def solution(A):
     # write your code in Python 3.6
-    Answer = math.ceil((Y-X) / D)
-    return Answer
+    l = len(A)
+    s = sum(A)
+    S = ( (l + 1) * (l + 2) ) / 2
+    a = int(S - s)
 
-print(solution(10, 85, 30))
+    return a
+
+print(solution(array))

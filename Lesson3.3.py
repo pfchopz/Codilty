@@ -1,15 +1,21 @@
 # you can write to stdout for debugging purposes, e.g.
 # print("this is a debug message")
 
-array = [2, 3, 1, 4, 6, 7]
+array = [3, 1, 2, 4, 3]
 
 def solution(A):
     # write your code in Python 3.6
-    l = len(A)
+    d = 2002
+    n = 0
     s = sum(A)
-    S = ( (l + 1) * (l + 2) ) / 2
-    a = int(S - s)
 
-    return a
+    for i in range(len(A) - 1):
+        n += A[i]
+        f = s - n
+        a = abs(n - f)
+        if a < d:
+            d = a
+
+    return d
 
 print(solution(array))
