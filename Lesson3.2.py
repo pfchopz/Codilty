@@ -13,3 +13,6 @@ def solution(A):
     return a
 
 print(solution(array))
+
+
+N * ( N + 1 ) / 2
