@@ -24,8 +24,6 @@ print(solution(array))
 
 
 
-
-
 #def counting(A, m):
 #    n = len(A)
 #    count = [0] * (m + 2)
