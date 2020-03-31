@@ -1,7 +1,7 @@
 # you can write to stdout for debugging purposes, e.g.
 # print("this is a debug message")
 
-array = [-10, -8, -8000, 3, 1, 2, 1, 5]
+array = [-10, -8, -8000, -3, -1, -2, -1, -5]
 
 def solution(A):
     # write your code in Python 3.6
@@ -13,17 +13,15 @@ def solution(A):
             B.add(i)
     B = sorted(B)
 
-    if len(B) == 0:
-        return 1
-    else:
-        for i in B:
-            if i == x:
-                x += 1
-            else:
-                return x
-        return x
+    for i in B:
+        if i == x:
+            x += 1
+        else:
+            return x
+    return x
 
 print(solution(array))
+
 
 
 
