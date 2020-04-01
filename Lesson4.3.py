@@ -1,7 +1,7 @@
 # you can write to stdout for debugging purposes, e.g.
 # print("this is a debug message")
 
-array = [-10, -8, -8000, -3, -1, -2, -1, -5]
+array = [-10, -8, -8000, 3, 1, 2, 1, 5, 4]
 
 def solution(A):
     # write your code in Python 3.6
