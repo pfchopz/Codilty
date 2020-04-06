@@ -12,6 +12,7 @@ def solution(S, P, Q):
 
     impact = {'A': 1, 'C': 2, 'G': 3, 'T': 4}
     counter = {'A': 0, 'C': 0, 'G': 0, 'T': 0}
+
     countSum = [{'A': 0, 'C': 0, 'G': 0, 'T': 0}]
     minImpact = []
 
@@ -23,6 +24,8 @@ def solution(S, P, Q):
         start = P[j]
         end = Q[j] + 1
 
+        print(countSum[end]['A'])
+
         if countSum[end]['A'] - countSum[start]['A'] > 0:
             minImpact.append(impact['A'])
         elif countSum[end]['C'] - countSum[start]['C'] > 0:
@@ -33,5 +36,6 @@ def solution(S, P, Q):
             minImpact.append(impact['T'])
 
     return minImpact
+
 
 print(solution(String, Array1, Array2))
