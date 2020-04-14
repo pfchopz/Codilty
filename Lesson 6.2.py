@@ -8,4 +8,4 @@ def solution(A):
     else:
         return A[-1] * A[-2] * A[-3]
 
-print(solution(TestArray))
+print(solution(TestArray)) 
