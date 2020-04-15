@@ -47,3 +47,25 @@ def solution(A):
     return intersect_count
 
 print(solution(TestArray))
+
+
+
+#################### solution found online ##########################
+discs_count = len(A)
+range_upper = [0]*discs_count
+range_lower = [0]*discs_count
+for index in range(discs_count):
+    range_upper[index] = index + A[index]
+    range_lower[index] = index - A[index]
+range_upper.sort()
+range_lower.sort()
+range_lower_index = 0
+intersect_count = 0
+for j in range(discs_count):
+    while range_lower_index < discs_count and range_upper[j] >= range_lower[range_lower_index]:
+        range_lower_index += 1
+    intersect_count += range_lower_index - j -1
+    if intersect_count > 10000000:
+        intersect_count = -1
+        break
+print (intersect_count)
