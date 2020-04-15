@@ -11,24 +11,39 @@ def solution(A):
 
 # populate right_intersect with right intersection counts
     for idx, value in enumerate(A):
-        if (idx + value) >= length:
-            right_intersect[-1] += 1
+        radius_coverage = idx + value
+        if radius_coverage >= length:
+            for i in range(idx, length):
+                right_intersect[i] += 1
         else:
-            right_intersect[idx + value] += 1
+            for i in range(idx, radius_coverage + 1):
+                right_intersect[i] += 1
 
 # calculate prefix sums for intersections
-    for i in range(1, length):
-        if i == 1:
-            right_intersect_prefixsums[i] += (right_intersect[i - 1] + right_intersect[i])
+#    for i in range(1, length):
+#        if i == 1:
+#            right_intersect_prefixsums[i] += (right_intersect[i - 1] + right_intersect[i])
+#        else:
+#            right_intersect_prefixsums[i] += (right_intersect_prefixsums[i - 1] + right_intersect[i])
+
+
+#    print(right_intersect)
+#    print(right_intersect_prefixsums)
+
+
+# count intersections
+    for j in range(1, length):
+        left_intersect = j - A[j]
+
+        if A[j] == 0:
+            intersect_count += right_intersect[j]
+        elif left_intersect > 0:
+            temp = right_intersect[left_intersect : j]
+            intersect_count += sum(temp) // max(temp)
         else:
-            right_intersect_prefixsums[i] += (right_intersect_prefixsums[i - 1] + right_intersect[i])
+            temp = right_intersect[0 : j]
+            intersect_count += sum(temp) // max(temp)
 
-
-    print(right_intersect)
-    print(right_intersect_prefixsums)
-
-
-
-
+    return intersect_count
 
 print(solution(TestArray))
