@@ -23,6 +23,7 @@ def solution(A):
             count += 1
     if count > n // 2:
         leader = candidate
+
     countRight = count
     countLeft = 0
     equiCount = 0
