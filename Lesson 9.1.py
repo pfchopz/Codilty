@@ -28,3 +28,4 @@ print(solution(array))
 
 #        if max_ending > 0  and low_candidate > A[i]:
 #            low_candidate = A[i]
+
